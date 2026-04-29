@@ -1,0 +1,250 @@
+:root {
+  --bg-main: #1e1e2f;
+  --bg-card: #2a2a40;
+  --primary: #4caf50;
+  --primary-hover: #45a049;
+  --text-light: #ffffff;
+  --text-muted: #aaaaaa;
+  --danger: #f44336;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-light);
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  background: var(--bg-card);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.logo-area {
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 2px dashed var(--text-muted);
+  border-radius: 8px;
+  color: var(--text-muted);
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.row {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+label {
+  font-size: 0.9em;
+  color: var(--text-muted);
+  margin-bottom: 5px;
+}
+
+select,
+input[type="text"],
+input[type="file"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #555;
+  background-color: #222236;
+  color: white;
+  font-size: 16px;
+}
+
+button {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-icon {
+  padding: 10px 15px;
+  font-size: 20px;
+}
+
+.btn-full {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.1em;
+  margin-bottom: 30px;
+}
+
+#loading-msg {
+  display: none;
+  text-align: center;
+  color: #ffeb3b;
+}
+
+.images-container {
+  display: flex;
+  gap: 20px;
+}
+
+.image-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #222236;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  position: relative;
+}
+
+.image-box label {
+  font-weight: bold;
+  color: var(--primary);
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+.image-wrapper {
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #111;
+  border-radius: 5px;
+  min-height: 300px;
+  overflow: hidden;
+}
+
+.image-wrapper img {
+  max-width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+}
+
+.btn-zoom {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: var(--bg-card);
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  position: relative;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 20px;
+  padding: 0;
+}
+
+#video-preview {
+  width: 100%;
+  border-radius: 8px;
+  background: #000;
+}
+
+#canvas-capture {
+  display: none;
+}
+
+.zoom-overlay {
+  background: rgba(0, 0, 0, 0.95);
+}
+
+#modal-zoom-img {
+  max-width: 95vw;
+  max-height: 95vh;
+  object-fit: contain;
+}
+
+.btn-close-zoom {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background: var(--danger);
+  font-size: 20px;
+  padding: 10px 15px;
+  border-radius: 50%;
+}
+
+#hidden-file-input {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .images-container,
+  .row {
+    flex-direction: column;
+  }
+
+  .container {
+    padding: 20px;
+  }
+}
