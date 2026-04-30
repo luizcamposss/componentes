@@ -7,6 +7,7 @@ from app.mm_to_pixel import mm_para_pixel_perspectiva
 from app.align import carregar_imagem, detectar_contorno_pcb
 from app.draw import desenhar_ponto_e_label, desenhar_caixa_aproximada_matriz
 from app.kicad.pcb_parser import carregar_edgecuts_pcb, extrair_bbox_edgecuts_para_csv_original
+from app.yolo_detector import aplicar_yolo_na_imagem
 
 
 def run_overlay_referencia(
@@ -42,5 +43,7 @@ def run_overlay_referencia(
         desenhar_caixa_aproximada_matriz(img_copy, comp, matriz)
         desenhar_ponto_e_label(img_copy, x_px, y_px, comp["ref"])
 
+    img_copy = aplicar_yolo_na_imagem(img_copy)
+
     cv2.imwrite(caminho_saida, img_copy)
-    print(f"[OK] Overlay salvo em: {caminho_saida}")
+    print(f"[OK] Overlay + YOLO salvo em: {caminho_saida}")
