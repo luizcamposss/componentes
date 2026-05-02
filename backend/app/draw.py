@@ -146,7 +146,7 @@ def desenhar_footprint_status(img, pontos, cor, texto):
     )
 
 
-def desenhar_box_yolo_status(img, box, cor, texto):
+def desenhar_box_yolo_status(img, box, cor, texto=None):
     x1, y1, x2, y2 = map(int, box)
 
     cv2.rectangle(img, (x1, y1), (x2, y2), cor, 2)

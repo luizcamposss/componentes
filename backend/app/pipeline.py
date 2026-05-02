@@ -71,7 +71,7 @@ def run_overlay_referencia(
                 img_resultado,
                 validacao["yolo"]["box"],
                 (0, 255, 0),   # verde
-                texto
+                None
             )
 
         elif validacao["status"] == "incerto":
