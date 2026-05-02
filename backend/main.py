@@ -4,7 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from api.routes.projetos import router as projetos_router
 from api.routes.inspecao import router as inspecao_router
 
-app = FastAPI(title="IHR AOI API")
+app = FastAPI(title="Componentes AOI API")
 
 app.add_middleware(
     CORSMiddleware,

@@ -6,9 +6,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DATA_DIR = BASE_DIR / "data"
 PROJETOS_DIR = DATA_DIR / "projetos"
 
+
+# Alterar para o generico
 KICAD_CLI = os.getenv(
     "KICAD_CLI",
-    r"C:\Program Files\KiCad\10.0\bin\kicad-cli.exe"
+    # r"C:\Program Files\KiCad\10.0\bin\kicad-cli.exe"
+    r"e:\aplicativos\bin\kicad-cli.exe"
 )
 
 PROJETOS_DIR.mkdir(parents=True, exist_ok=True)

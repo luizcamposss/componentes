@@ -71,6 +71,15 @@ def deve_ignorar(row: dict) -> bool:
 
     return False
 
+def pegar_float(row, *nomes, padrao=0.0):
+    for nome in nomes:
+        valor = row.get(nome)
+
+        if valor is not None and str(valor).strip() != "":
+            return float(str(valor).replace(",", "."))
+
+    return padrao
+
 
 def carregar_componentes(caminho_csv: str) -> List[Dict]:
     componentes = []
@@ -84,18 +93,22 @@ def carregar_componentes(caminho_csv: str) -> List[Dict]:
 
             try:
                 package = row["Package"].strip().replace('"', "")
-                w_mm, h_mm = PACKAGE_SIZES_MM.get(package, (2.0, 2.0))
 
                 comp = {
                     "ref": row["Ref"].strip().replace('"', ""),
-                    "val": row["Val"].strip().replace('"', ""),
+                    "val": row.get("Val", "").strip().replace('"', ""),
                     "package": package,
-                    "x_mm": float(row["PosX"]),
-                    "y_mm": float(row["PosY"]),
-                    "w_mm": w_mm,
-                    "h_mm": h_mm,
-                    "rot": float(row["Rot"]),
-                    "side": row["Side"].strip().lower().replace('"', ""),
+
+                    # Aceita tanto x_mm/y_mm quanto PosX/PosY.
+                    "x_mm": pegar_float(row, "x_mm", "PosX"),
+                    "y_mm": pegar_float(row, "y_mm", "PosY"),
+
+                    # Agora vem do footprint real.
+                    "w_mm": pegar_float(row, "w_mm", "width_mm", padrao=2.0),
+                    "h_mm": pegar_float(row, "h_mm", "height_mm", padrao=2.0),
+
+                    "rot": pegar_float(row, "Rot"),
+                    "side": row.get("Side", "").strip().lower().replace('"', ""),
                 }
 
                 componentes.append(comp)

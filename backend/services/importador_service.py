@@ -3,8 +3,8 @@ import zipfile
 import shutil
 
 from services.kicad_cli_service import converter_para_kicad, exportar_csv
-
-from core.config import get_project_paths
+from services.footprint_service import gerar_csv_footprints
+from core.config import get_project_paths, normalizar_nome_projeto
 
 def criar_estrutura_projeto(nome_projeto):
     paths = get_project_paths(nome_projeto)
@@ -113,15 +113,22 @@ def importar_projeto_universal(caminho_upload, nome_projeto):
 
     arquivos = encontrar_arquivos(pasta_busca)
 
+    nome_base = normalizar_nome_projeto(nome_projeto)
+
     caminho_pcb = os.path.join(
         estrutura["pcb"],
-        f"{nome_projeto}.kicad_pcb"
+        f"{nome_base}.kicad_pcb"
     )
 
     caminho_csv = os.path.join(
         estrutura["csv"],
-        f"{nome_projeto}.csv"
+        f"{nome_base}.csv"
     )
+
+    # caminho_csv_legacy = os.path.join(
+    # estrutura["csv"],
+    # f"{nome_base}_legacy.csv"
+    # )
 
     # 🔹 1 - KiCad direto
     if arquivos["kicad_pcb"]:
@@ -162,8 +169,11 @@ def importar_projeto_universal(caminho_upload, nome_projeto):
     if not validar_kicad_pcb(caminho_pcb):
         raise RuntimeError("Conversão falhou → PCB inválido")
 
-    # 📊 gerar CSV padrão KiCad
-    exportar_csv(caminho_pcb, caminho_csv)
+    # # CSV antigo do KiCad, útil para comparar/debugar
+    # exportar_csv(caminho_pcb, caminho_csv_legacy)
+
+    # CSV novo com footprints
+    gerar_csv_footprints(caminho_pcb, caminho_csv)
 
     return {
         "pcb": caminho_pcb,
