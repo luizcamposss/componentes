@@ -1,14 +1,21 @@
 import os
+import json
 import cv2
 import numpy as np
+
+from app.draw import (
+    calcular_caixa_componente_px,
+    desenhar_footprint_status,
+    desenhar_box_yolo_status,
+)
 
 from app.parser import carregar_componentes
 from app.mm_to_pixel import mm_para_pixel_perspectiva
 from app.align import carregar_imagem, detectar_contorno_pcb
-from app.draw import desenhar_ponto_e_label, desenhar_caixa_aproximada_matriz
 from app.kicad.pcb_parser import carregar_edgecuts_pcb, extrair_bbox_edgecuts_para_csv_original
-from app.yolo_detector import aplicar_yolo_na_imagem
 
+from app.yolo_detector import detectar_yolo
+from app.validation import validar_componente
 
 def run_overlay_referencia(
     caminho_img: str,
@@ -31,19 +38,59 @@ def run_overlay_referencia(
         np.float32(pontos_img)
     )
 
-    img_copy = img.copy()
+    # 1) YOLO roda na imagem ORIGINAL e limpa
+    detections = detectar_yolo(img)
+
+    # 2) imagem final só para desenhar o resultado
+    img_resultado = img.copy()
+
+    # 3) controla quais detecções YOLO já foram usadas
+    deteccoes_usadas = set()
 
     for comp in componentes:
-        x_px, y_px = mm_para_pixel_perspectiva(
-            comp["x_mm"],
-            comp["y_mm"],
-            matriz
+        caixa_info = calcular_caixa_componente_px(
+            comp=comp,
+            matriz_transformacao=matriz,
+            padding_px=2
         )
 
-        desenhar_caixa_aproximada_matriz(img_copy, comp, matriz)
-        desenhar_ponto_e_label(img_copy, x_px, y_px, comp["ref"])
+        validacao = validar_componente(
+            img_original=img,
+            comp=comp,
+            caixa_info=caixa_info,
+            detections=detections,
+            deteccoes_usadas=deteccoes_usadas,
+        )
 
-    img_copy = aplicar_yolo_na_imagem(img_copy)
+        nome_comp = comp["ref"]  # se quiser trocar para comp["val"], troque aqui
+        texto = f"{nome_comp} {validacao['status']}"
 
-    cv2.imwrite(caminho_saida, img_copy)
-    print(f"[OK] Overlay + YOLO salvo em: {caminho_saida}")
+        if validacao["status"] == "presente":
+            # Desenha SOMENTE a caixa da YOLO
+            desenhar_box_yolo_status(
+                img_resultado,
+                validacao["yolo"]["box"],
+                (0, 255, 0),   # verde
+                texto
+            )
+
+        elif validacao["status"] == "incerto":
+            # Desenha o footprint esperado em amarelo
+            desenhar_footprint_status(
+                img_resultado,
+                caixa_info["pontos"],
+                (0, 255, 255),   # amarelo
+                texto
+            )
+
+        else:
+            # Desenha o footprint esperado em vermelho
+            desenhar_footprint_status(
+                img_resultado,
+                caixa_info["pontos"],
+                (0, 0, 255),   # vermelho
+                texto
+            )
+
+    cv2.imwrite(caminho_saida, img_resultado)
+    print(f"[OK] Overlay + validação salvo em: {caminho_saida}")

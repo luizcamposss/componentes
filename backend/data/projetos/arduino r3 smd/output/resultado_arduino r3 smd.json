@@ -1,0 +1,418 @@
+[
+  {
+    "ref": "C1",
+    "val": "100n",
+    "package": "C0603-ROUND",
+    "status": "presente",
+    "metodo": "yolo_centro",
+    "score": 0.9166666666666666
+  },
+  {
+    "ref": "C2",
+    "val": "100n",
+    "package": "C0603-ROUND",
+    "status": "presente",
+    "metodo": "yolo_centro",
+    "score": 0.76
+  },
+  {
+    "ref": "C3",
+    "val": "1u",
+    "package": "C0603-ROUND",
+    "status": "presente",
+    "metodo": "yolo_centro",
+    "score": 0.88
+  },
+  {
+    "ref": "C4",
+    "val": "100n",
+    "package": "C0603-ROUND",
+    "status": "presente",
+    "metodo": "yolo_centro",
+    "score": 0.8076923076923077
+  },
+  {
+    "ref": "C5",
+    "val": "100n",
+    "package": "C0603-ROUND",
+    "status": "presente",
+    "metodo": "yolo_centro",
+    "score": 0.75
+  },
+  {
+    "ref": "C6",
+    "val": "100n",
+    "package": "C0603-ROUND",
+    "status": "presente",
+    "metodo": "yolo_centro",
+    "score": 0.88
+  },
+  {
+    "ref": "C7",
+    "val": "100n",
+    "package": "C0603-ROUND",
+    "status": "presente",
+    "metodo": "yolo_centro",
+    "score": 0.8243801652892562
+  },
+  {
+    "ref": "C8",
+    "val": "1u",
+    "package": "C0603-ROUND",
+    "status": "presente",
+    "metodo": "yolo_centro",
+    "score": 0.7916666666666666
+  },
+  {
+    "ref": "C9",
+    "val": "22p",
+    "package": "C0603-ROUND",
+    "status": "presente",
+    "metodo": "yolo_centro",
+    "score": 0.75
+  },
+  {
+    "ref": "C10",
+    "val": "100nF",
+    "package": "C0603-ROUND",
+    "status": "presente",
+    "metodo": "yolo_centro",
+    "score": 0.8695652173913043
+  },
+  {
+    "ref": "C11",
+    "val": "22p",
+    "package": "C0603-ROUND",
+    "status": "presente",
+    "metodo": "yolo_centro",
+    "score": 0.8
+  },
+  {
+    "ref": "D1",
+    "val": "M7",
+    "package": "SMB",
+    "status": "presente",
+    "metodo": "yolo_centro",
+    "score": 1.0
+  },
+  {
+    "ref": "D2",
+    "val": "CD1206-S01575",
+    "package": "MINIMELF",
+    "status": "presente",
+    "metodo": "yolo_centro",
+    "score": 0.8181818181818182
+  },
+  {
+    "ref": "D3",
+    "val": "CD1206-S01575",
+    "package": "MINIMELF",
+    "status": "presente",
+    "metodo": "yolo_centro",
+    "score": 0.75
+  },
+  {
+    "ref": "F1",
+    "val": "MF-MSMF050-2 500mA",
+    "package": "L1812",
+    "status": "presente",
+    "metodo": "yolo_centro",
+    "score": 1.0
+  },
+  {
+    "ref": "ICSP0",
+    "val": "3x2 M",
+    "package": "2X03",
+    "status": "presente",
+    "metodo": "yolo_centro",
+    "score": 1.0
+  },
+  {
+    "ref": "ICSP1",
+    "val": "3x2 M",
+    "package": "2X03",
+    "status": "presente",
+    "metodo": "yolo_cobertura",
+    "score": 1.0
+  },
+  {
+    "ref": "J1",
+    "val": "-",
+    "package": "1X14-CUSTOM",
+    "status": "presente",
+    "metodo": "yolo_cobertura",
+    "score": 0.9090909090909091
+  },
+  {
+    "ref": "J2",
+    "val": "-",
+    "package": "1X18-CUSTOM",
+    "status": "presente",
+    "metodo": "yolo_cobertura",
+    "score": 1.0
+  },
+  {
+    "ref": "JP2",
+    "val": "2x2 M-NM",
+    "package": "2X02",
+    "status": "presente",
+    "metodo": "yolo_cobertura",
+    "score": 1.0
+  },
+  {
+    "ref": "L0",
+    "val": "YELLOW",
+    "package": "CHIP-LED0805",
+    "status": "presente",
+    "metodo": "yolo_centro",
+    "score": 0.75
+  },
+  {
+    "ref": "L1",
+    "val": "BLM21",
+    "package": "0805",
+    "status": "presente",
+    "metodo": "yolo_cobertura",
+    "score": 0.6190476190476191
+  },
+  {
+    "ref": "L2",
+    "val": "10uH",
+    "package": "0805",
+    "status": "presente",
+    "metodo": "yolo_centro",
+    "score": 0.75
+  },
+  {
+    "ref": "ON0",
+    "val": "GREEN",
+    "package": "CHIP-LED0805",
+    "status": "presente",
+    "metodo": "yolo_centro",
+    "score": 0.7857142857142857
+  },
+  {
+    "ref": "PC1",
+    "val": "47u",
+    "package": "PANASONIC_D",
+    "status": "presente",
+    "metodo": "yolo_centro",
+    "score": 1.0
+  },
+  {
+    "ref": "PC2",
+    "val": "47u",
+    "package": "PANASONIC_D",
+    "status": "presente",
+    "metodo": "yolo_centro",
+    "score": 1.0
+  },
+  {
+    "ref": "R1",
+    "val": "1M",
+    "package": "R0603-ROUND",
+    "status": "presente",
+    "metodo": "yolo_centro",
+    "score": 0.8333333333333334
+  },
+  {
+    "ref": "R2",
+    "val": "1M",
+    "package": "R0603-ROUND",
+    "status": "presente",
+    "metodo": "yolo_centro",
+    "score": 0.88
+  },
+  {
+    "ref": "RESET-EN0",
+    "val": "",
+    "package": "SJ",
+    "status": "presente",
+    "metodo": "yolo_centro",
+    "score": 0.8636363636363636
+  },
+  {
+    "ref": "RESET0",
+    "val": "TS42031-160R-TR-7260",
+    "package": "TS42",
+    "status": "presente",
+    "metodo": "yolo_centro",
+    "score": 1.0
+  },
+  {
+    "ref": "RN1",
+    "val": "10K",
+    "package": "CAY16",
+    "status": "presente",
+    "metodo": "yolo_centro",
+    "score": 0.7777777777777778
+  },
+  {
+    "ref": "RN2",
+    "val": "1K",
+    "package": "CAY16",
+    "status": "presente",
+    "metodo": "yolo_centro",
+    "score": 0.8181818181818182
+  },
+  {
+    "ref": "RN3",
+    "val": "22R",
+    "package": "CAY16",
+    "status": "presente",
+    "metodo": "yolo_centro",
+    "score": 0.8636363636363636
+  },
+  {
+    "ref": "RN4",
+    "val": "1K",
+    "package": "CAY16",
+    "status": "presente",
+    "metodo": "yolo_centro",
+    "score": 0.7857142857142857
+  },
+  {
+    "ref": "RX0",
+    "val": "YELLOW",
+    "package": "CHIP-LED0805",
+    "status": "presente",
+    "metodo": "yolo_centro",
+    "score": 0.75
+  },
+  {
+    "ref": "T1",
+    "val": "FDN340P",
+    "package": "SOT-23",
+    "status": "presente",
+    "metodo": "yolo_centro",
+    "score": 0.9090909090909091
+  },
+  {
+    "ref": "TX0",
+    "val": "YELLOW",
+    "package": "CHIP-LED0805",
+    "status": "presente",
+    "metodo": "yolo_centro",
+    "score": 0.75
+  },
+  {
+    "ref": "U1",
+    "val": "NCP1117ST50T3G",
+    "package": "SOT223",
+    "status": "presente",
+    "metodo": "yolo_centro",
+    "score": 1.0
+  },
+  {
+    "ref": "U2",
+    "val": "LP2985-33DBVR",
+    "package": "SOT23-DBV",
+    "status": "presente",
+    "metodo": "yolo_centro",
+    "score": 1.0
+  },
+  {
+    "ref": "U3",
+    "val": "16U2",
+    "package": "ATMEL_QFN32",
+    "status": "presente",
+    "metodo": "yolo_centro",
+    "score": 1.0
+  },
+  {
+    "ref": "U4",
+    "val": "ATMEGA328P-MU",
+    "package": "MLF32",
+    "status": "presente",
+    "metodo": "yolo_centro",
+    "score": 1.0
+  },
+  {
+    "ref": "U5",
+    "val": "LMV358IDGKR",
+    "package": "MSOP08",
+    "status": "presente",
+    "metodo": "yolo_centro",
+    "score": 1.0
+  },
+  {
+    "ref": "UNK_HOLE_0",
+    "val": "",
+    "package": "dummyfp0",
+    "status": "incerto",
+    "metodo": "textura",
+    "score": 12.149805290416747
+  },
+  {
+    "ref": "UNK_HOLE_1",
+    "val": "",
+    "package": "dummyfp1",
+    "status": "ausente",
+    "metodo": "sem_match",
+    "score": 0.0
+  },
+  {
+    "ref": "UNK_HOLE_2",
+    "val": "",
+    "package": "dummyfp2",
+    "status": "incerto",
+    "metodo": "textura",
+    "score": 21.625416293681102
+  },
+  {
+    "ref": "UNK_HOLE_3",
+    "val": "",
+    "package": "dummyfp3",
+    "status": "incerto",
+    "metodo": "textura",
+    "score": 19.794069214411525
+  },
+  {
+    "ref": "X1",
+    "val": "POWERSUPPLY_DC21MMX",
+    "package": "POWERSUPPLY_DC-21MM",
+    "status": "presente",
+    "metodo": "yolo_centro",
+    "score": 1.0
+  },
+  {
+    "ref": "X2",
+    "val": "USB-B_TH",
+    "package": "PN61729",
+    "status": "presente",
+    "metodo": "yolo_cobertura",
+    "score": 1.0
+  },
+  {
+    "ref": "Y1",
+    "val": "16MHz",
+    "package": "QS",
+    "status": "presente",
+    "metodo": "yolo_centro",
+    "score": 1.0
+  },
+  {
+    "ref": "Y2",
+    "val": "CSTCE16M0V53-R0 16MHZ",
+    "package": "RESONATOR",
+    "status": "presente",
+    "metodo": "yolo_centro",
+    "score": 0.7619047619047619
+  },
+  {
+    "ref": "Z1",
+    "val": "CG0603MLC-05E",
+    "package": "CT_CN0603",
+    "status": "presente",
+    "metodo": "yolo_centro",
+    "score": 0.8333333333333334
+  },
+  {
+    "ref": "Z2",
+    "val": "CG0603MLC-05E",
+    "package": "CT_CN0603",
+    "status": "presente",
+    "metodo": "yolo_centro",
+    "score": 0.8260869565217391
+  }
+]
